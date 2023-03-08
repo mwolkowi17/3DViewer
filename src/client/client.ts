@@ -12,17 +12,9 @@ camera.position.z = 4
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
+scene.background=new THREE.Color("white")
 
 const controls = new OrbitControls(camera, renderer.domElement)
-
-const geometry = new THREE.BoxGeometry()
-const material = new THREE.MeshBasicMaterial({
-    color: 0x00ff00,
-    wireframe: true,
-})
-
-const cube = new THREE.Mesh(geometry, material)
-//scene.add(cube)
 
 scene.add(new Light1().main);
 scene.add(new Light2().main);
@@ -39,8 +31,8 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate)
 
-    cube.rotation.x += 0.01
-    cube.rotation.y += 0.01
+    //cube.rotation.x += 0.01
+    //cube.rotation.y += 0.01
 
     controls.update()
 

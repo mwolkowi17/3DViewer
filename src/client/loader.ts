@@ -10,16 +10,19 @@ export class Loader1 {
         this.main.load("./turbo1.glb", (gltf) => {
             gltf.scene.position.set(0, 0, 0);
             gltf.scene.rotation.set(0, 0, 0);
-      
+          
+            const objects: any = [];
             gltf.scene.traverse(function (child) {
-              if ((child as THREE.Mesh).isMesh) {
-                const m = child as THREE.Mesh;
-                m.castShadow = true;
-             }
+    
+              console.log(child);
+              objects.push(child);
+          
             });
+
+            console.log(objects)
       
             scene.add(gltf.scene);
-            //console.log(pickableObjects);
+           
           });
 
     }
