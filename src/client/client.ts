@@ -1,10 +1,13 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { Light1 } from './light1'
+import { Light2 } from './light2'
+import { Loader1 } from './loader'
 
-const scene = new THREE.Scene()
+export const scene = new THREE.Scene()
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-camera.position.z = 2
+camera.position.z = 4
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
@@ -19,7 +22,11 @@ const material = new THREE.MeshBasicMaterial({
 })
 
 const cube = new THREE.Mesh(geometry, material)
-scene.add(cube)
+//scene.add(cube)
+
+scene.add(new Light1().main);
+scene.add(new Light2().main);
+new Loader1();
 
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
