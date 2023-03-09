@@ -4,10 +4,10 @@ import {scene} from './client'
 
 export class Loader1 {
     main: GLTFLoader;
+
     constructor(){
         this.main = new GLTFLoader();
-
-        this.main.load("./turbo1.glb", (gltf) => {
+        this.main.load("./models/turbo1.glb", (gltf) => {
             gltf.scene.position.set(0, 0, 0);
             gltf.scene.rotation.set(0, 0, 0);
           
@@ -16,7 +16,8 @@ export class Loader1 {
     
               console.log(child);
               objects.push(child);
-          
+              
+              
             });
 
             console.log(objects)
