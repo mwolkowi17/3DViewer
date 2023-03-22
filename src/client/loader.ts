@@ -7,7 +7,7 @@ export class Loader1 {
 
     constructor(){
         this.main = new GLTFLoader();
-        this.main.load("./models/turbo1.glb", (gltf) => {
+        this.main.load("./models/wysysacz_popr1.glb", (gltf) => {
             gltf.scene.position.set(0, 0, 0);
             gltf.scene.rotation.set(0, 0, 0);
           
